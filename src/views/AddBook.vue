@@ -13,25 +13,19 @@
         >
           <form @submit.prevent="submit">
             <validation-provider
-              v-slot="{ errors }"
               name="Title"
-              rules="required|max:10"
             >
               <v-text-field
                 v-model="title"
-                :error-messages="errors"
                 label="Titre"
                 required
               ></v-text-field>
             </validation-provider>
             <validation-provider
-              v-slot="{ errors }"
               name="Author"
-              rules="required|max:10"
             >
               <v-text-field
                 v-model="author"
-                :error-messages="errors"
                 label="Auteur"
                 required
               ></v-text-field>
@@ -39,26 +33,22 @@
 
 
             <validation-provider
-              v-slot="{ errors }"
-              name="Descriptin"
-              rules="required|max:10"
+              name="Description"
             >
               <v-text-field
                 v-model="description"
-                :error-messages="errors"
-                label="Description"
+                label="Description (état du livre, votre avis...)"
+
                 required
               ></v-text-field>
             </validation-provider>
             <validation-provider
-              v-slot="{ errors }"
               name="select"
               rules="required"
             >
               <v-select
                 v-model="select"
                 :items="items"
-                :error-messages="errors"
                 label="Catégorie"
                 data-vv-name="select"
                 required
@@ -75,20 +65,23 @@
             <validation-provider>
               <v-file-input
                 truncate-length="27"
-                label="Résumé"
+                label="Photo du résumé"
                 required
               ></v-file-input>
             </validation-provider>
 
+            <router-link :to="'/'">
+              <v-btn
+                class="mr-4 deep-purple darken-4 white--text"
+                type="submit"
+                :disabled="invalid"
+                @click="submit"
+              >
+                Ajouter Livre
+              </v-btn>
+            </router-link>
 
-            <v-btn
-              class="mr-4 deep-purple darken-4 white--text"
-              type="submit"
-              :disabled="invalid"
-              @click="submit"
-            >
-              Ajouter Livre
-            </v-btn>
+
             <v-btn @click="clear">
               Effacer
             </v-btn>

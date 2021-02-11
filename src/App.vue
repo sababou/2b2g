@@ -75,9 +75,9 @@
         <v-col
         class="d-flex"
         >
-          <div class="d-none d-lg-inline-block px-4 text-body-1 ml-auto mt-1" @click="scrollMeTo('how_it_works')">Comment ça marche</div>
-          <div class="d-none d-lg-inline-block px-4 text-body-1 mt-1" @click="scrollMeTo('zones')">Zones de rencontre</div>
-          <div class="d-none d-lg-inline-block px-4 text-body-1 mt-1" @click="scrollMeTo('FAQ')">FAQ</div>
+          <div style="cursor: pointer;" class="d-none d-lg-inline-block px-4 text-body-1 ml-auto mt-1" @click="scrollMeTo('how_it_works')">Comment ça marche</div>
+          <div style="cursor: pointer;" class="d-none d-lg-inline-block px-4 text-body-1 mt-1" @click="scrollMeTo('zones')">Zones de rencontre</div>
+          <div style="cursor: pointer;" class="d-none d-lg-inline-block px-4 text-body-1 mt-1" @click="scrollMeTo('FAQ')">FAQ</div>
           <div class="d-inline-block px-4 text-body-1 mt-1 ml-auto ml-lg-0 mr-2 mr-lg-5">
 
 
@@ -271,6 +271,7 @@ export default {
       $route (to, from){
         console.log(from)
         console.log(to)
+		document.title = to.name+" - Too Book To Go"
         if(to.path != "/search"){
           this.search_navbar = ""
         }
@@ -295,7 +296,7 @@ export default {
     methods: {
       logout() {
         this.$store.dispatch('logoutUser');
-        window.location.href = "/";
+        window.location.href = "/~ababou/";
       },
       scrollMeTo(refName) {
         var element = document.querySelector("[data-ref='"+refName+"']");

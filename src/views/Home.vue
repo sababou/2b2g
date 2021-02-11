@@ -149,6 +149,46 @@
 
         </template>
 
+        <template v-for="category in $store.state.categories">
+          <v-row v-if="category.id==1" :key="category.id">
+            <v-col
+              :key="category.id"
+              class="mt-7 mt-lg-12"
+              cols="12"
+            >
+              <h3 class="deep-purple--text text--darken-4 text-h3 font-weight-bold py-4 py-lg-7">Suggéré pour vous</h3>
+            </v-col>
+
+
+
+            <v-col
+              v-for="book in category.books"
+              :key="`${category.id}${book.id}`"
+              cols="12"
+              md="6"
+              lg="3"
+
+            >
+              <!-- <v-sheet height="150"></v-sheet> -->
+              <Book
+              :title="book.title"
+              rated=""
+              author=""
+              :owner="book.owner"
+              :picture="book.cover"
+              :book_id="book.id"
+               />
+
+            </v-col>
+          </v-row>
+          <v-row  v-if="category.id==1" :key="category.id">
+            <v-col class="d-flex">
+              <div class="ml-auto my-3 text-h5 font-weight-bold"><a class="black--text" href="#" style="text-decoration : none;">Voir plus</a></div>
+            </v-col>
+          </v-row>
+
+        </template>
+
 
         <v-container>
           <v-row>
@@ -578,6 +618,9 @@ export default {
       }, 200);
 
     }
+  },
+  window:onload = function(){
+	document.title = 'Accueil - Too Book To Go'
   }
 }
 </script>

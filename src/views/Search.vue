@@ -28,14 +28,9 @@
         </v-col>
         <v-col
         cols="6" :md="4">
-          <v-select
-            v-model="select"
-            :items="items_auteurs"
-            :error-messages="errors"
-            label="Auteurs"
-            data-vv-name="select"
-            required
-          ></v-select>
+          <v-text-field
+            label="Auteur"
+          ></v-text-field>
         </v-col>
       </v-row>
       <v-row>

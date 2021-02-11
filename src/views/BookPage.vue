@@ -117,21 +117,28 @@
                <span class="text-body-1 ml-1 my-auto">John Doe</span>
 
             </div>
-            <div class="text-body-2" style="margin-top: -12px; margin-left: 52px;">
-              <v-icon class="ml-auto text-h4 font-weight-light float-right mr-7" style="margin-top: -25px;">mdi-chevron-right</v-icon>
-              <div>135 pts — Ambassadeur</div>
-              <v-rating
-                :value="4.5"
-                color="amber"
-                dense
-                half-increments
-                readonly
-                size="22"
-                class="d-inline-block"
-              >
-              </v-rating>
-              <div class="d-flex mt-1 "><v-icon class="deep-purple--text text--darken-4">mdi-map-marker-outline</v-icon> <div class="my-auto">Lyon</div></div>
-            </div>
+
+            <router-link :to="'/user'">
+              <div class="text-body-2" style="margin-top: -12px; margin-left: 52px;">
+
+                  <v-icon class="ml-auto text-h4 font-weight-light float-right mr-7" style="margin-top: -25px;">mdi-chevron-right</v-icon>
+
+
+                <div>135 pts — Ambassadeur</div>
+                <v-rating
+                  :value="4.5"
+                  color="amber"
+                  dense
+                  half-increments
+                  readonly
+                  size="22"
+                  class="d-inline-block"
+                >
+                </v-rating>
+                <div class="d-flex mt-1 "><v-icon class="deep-purple--text text--darken-4">mdi-map-marker-outline</v-icon> <div class="my-auto">Lyon</div></div>
+              </div>
+            </router-link>
+
             <div class="mt-4">
               <p class="text-body-1 font-weight-medium mb-2">Avis du lecteur</p>
               <p class="text-body-2">Un classique à ne pas rater, les surprises ne s'arrêtent pas et malheureusement les déceptions non plus... Du coup, un coup de coeur particulier pour la mère des dragons ! Je n'en dis pas plus, venez découvrir...</p>
@@ -140,7 +147,7 @@
               <hr class="deep-purple darken-4">
             </div>
             <div class="d-flex d-md-none justify-space-around">
-              <div style="width: 36%">
+              <div style="width: 80%">
                 <v-menu
                   v-model="menu2"
                   :close-on-content-click="false"
@@ -154,6 +161,7 @@
                       color="deep-purple"
                       v-model="date"
                       label="Date d'emprunt"
+                      prepend-icon="mdi-calendar"
                       readonly
                       v-bind="attrs"
                       v-on="on"
@@ -165,7 +173,7 @@
                   ></v-date-picker>
                 </v-menu>
               </div>
-              <div style="width: 36%">
+              <div style="width: 80%">
                 <v-menu
                   v-model="menu2"
                   :close-on-content-click="false"
@@ -178,6 +186,7 @@
                     <v-text-field
                       v-model="date"
                       label="Date de remise"
+                      prepend-icon="mdi-calendar"
                       readonly
                       v-bind="attrs"
                       v-on="on"
@@ -194,7 +203,7 @@
 
 
             <div class="d-none d-md-flex justify-space-around">
-              <div style="width: 26%">
+              <div style="width: 34%">
                 <v-menu
                   v-model="menu2"
                   :close-on-content-click="false"
@@ -208,6 +217,7 @@
                       color="deep-purple"
                       v-model="date"
                       label="Date d'emprunt"
+                      prepend-icon="mdi-calendar"
                       readonly
                       v-bind="attrs"
                       v-on="on"
@@ -219,7 +229,7 @@
                   ></v-date-picker>
                 </v-menu>
               </div>
-              <div style="width: 26%">
+              <div style="width: 34%">
                 <v-menu
                   v-model="menu2"
                   :close-on-content-click="false"
@@ -232,6 +242,7 @@
                     <v-text-field
                       v-model="date"
                       label="Date de remise"
+                      prepend-icon="mdi-calendar"
                       readonly
                       v-bind="attrs"
                       v-on="on"

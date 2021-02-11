@@ -20,7 +20,7 @@ const routes = [
   },
   {
     path: '/message',
-    name: 'Message',
+    name: 'Messages',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -28,7 +28,7 @@ const routes = [
   },
   {
     path: '/login',
-    name: 'LogIn',
+    name: 'Connexion',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -36,7 +36,7 @@ const routes = [
   },
   {
     path: '/signup',
-    name: 'SignUp',
+    name: 'Inscription',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -44,7 +44,7 @@ const routes = [
   },
   {
     path: '/account',
-    name: 'Account',
+    name: 'Mon compte',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -52,7 +52,7 @@ const routes = [
   },
   {
     path: '/search',
-    name: 'Search',
+    name: 'Recherche',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -60,7 +60,7 @@ const routes = [
   },
   {
     path: '/book/:book_id',
-    name: 'BookPage',
+    name: 'Livre',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -68,7 +68,7 @@ const routes = [
   },
   {
     path: '/add_book',
-    name: 'AddBook',
+    name: 'Ajouter un livre',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -76,7 +76,7 @@ const routes = [
   },
   {
     path: '/user',
-    name: 'User',
+    name: 'Mon profil',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.

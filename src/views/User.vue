@@ -799,6 +799,18 @@
       </v-tab-item>
 
       <v-tab-item class=" amber accent-3 ">
+        <v-container>
+          <v-row>
+            <v-col class="text-center">
+              <router-link :to="'/add_book'">
+                <v-btn
+                  rounded
+                  class="deep-purple darken-3 white--text"
+                >Ajouter un livre</v-btn>
+              </router-link>
+            </v-col>
+          </v-row>
+        </v-container>
         <v-container class="px-7 px-lg-15">
           <template v-for="category in $store.state.categories">
             <v-row v-if="category.id==1" :key="category.id">

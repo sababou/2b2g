@@ -17,14 +17,10 @@
         >
           <form @submit.prevent="submit">
             <validation-provider
-              v-slot="{ errors }"
               name="Name"
-              rules="required|max:10"
             >
               <v-text-field
                 v-model="name"
-                :counter="10"
-                :error-messages="errors"
                 label="Nom complet"
                 required
               ></v-text-field>
@@ -127,13 +123,18 @@
             </validation-provider>
 
 
-            <v-btn
-              class="mr-4 deep-purple darken-4 white--text"
-              type="submit"
-              :disabled="invalid"
-            >
-              S'inscrire
-            </v-btn>
+            <router-link :to="'/login'">
+              <v-btn
+                class="mr-4 deep-purple darken-4 white--text"
+                type="submit"
+                :disabled="invalid"
+              >
+                S'inscrire
+              </v-btn>
+            </router-link>
+
+
+
             <v-btn @click="clear">
               Effacer
             </v-btn>

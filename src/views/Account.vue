@@ -115,7 +115,18 @@
             <v-btn @click="clear">
               Effacer
             </v-btn>
+            <hr class="my-5">
+            <v-btn
+              class="mr-4 red darken-4 white--text"
+              type="submit"
+              @click="remove()"
+            >
+              Supprimer mon compte
+            </v-btn>
+
           </form>
+
+
         </validation-observer>
       </v-col>
     </v-row>
@@ -194,6 +205,10 @@
         this.checkbox = null
         this.$refs.observer.reset()
       },
+      remove(){
+        this.$store.state.metadata.logged = null
+        document.location.href = "/~ababou"
+      }
     },
   }
 </script>
